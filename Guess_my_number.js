@@ -6,9 +6,9 @@
 // // asa selectam clasa si manipulam valoarea
 // document.querySelector('.guess').value = 15;
 
-let secretNumber = Math.trunc(Math.random() * 20) + 1;
-let score = 20;
-let highscore = 0;
+let secretNumber = Math.trunc(Math.random() * 20) + 1; // in this way we can use a random number from 1 to 20
+let score = 20; // set the inital score
+let highscore = 0; // set the initial highscore
 document.querySelector('.check').addEventListener('click', function () {
   let guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
@@ -25,7 +25,7 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.message').textContent =
       '🏆Correct Number! Congrats You Win!';
     document.querySelector('body').style.backgroundColor = 'green';
-    document.querySelector('.number').style.width = '30rem';
+    document.querySelector('.number').style.width = '30rem'; // when win the dimension of square change in a rectangle
     document.querySelector('.number').textContent = secretNumber;
 
     if (score > highscore) {
@@ -64,7 +64,7 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('.message').textContent = 'Start guessing...';
   document.querySelector('.score').textContent = score;
   document.querySelector('.number').textContent = '?';
-  document.querySelector('.guess').value = '';
-  document.querySelector('body').style.backgroundColor = '#222';
+  document.querySelector('.guess').value = ''; // empty string is empty space
+  document.querySelector('body').style.backgroundColor = '#222'; // with .style can modify css elements
   document.querySelector('.number').style.width = '15rem';
 });
